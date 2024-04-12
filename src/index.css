@@ -74,4 +74,48 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  main {
+    min-height: calc(100vh - 80px);
+  }
+
+  #root {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .nav-option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: 350ms;
+  }
+
+  .nav-option:hover {
+    background-color: rgb(83 0 102 / 0.04);
+  }
+
+  .nav-option::after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    width: 0px;
+    border-bottom: 1px solid #eab308;
+    transition: 350ms;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  .nav-option.active::after {
+    transform: scale(1);
+    width: 100%;
+  }
 }
