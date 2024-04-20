@@ -83,6 +83,11 @@
     min-height: calc(100vh - 80px);
   }
 
+  h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+
   #root {
     display: flex;
     flex-direction: column;
@@ -196,6 +201,10 @@
     align-self: center;
     justify-self: flex-start;
     font-size: .8rem;
+  }
+
+  .about-card h3 {
+    @apply text-2xl z-[1] font-medium;
   }
 
   @keyframes link-after-animation {

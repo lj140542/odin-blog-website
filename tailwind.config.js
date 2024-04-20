@@ -72,6 +72,13 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      backgroundImage: {
+        "github": "url('github.png')",
+        "odinproject": "url('odinproject.png')",
+      },
+      backgroundSize: {
+        "12": "3rem",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
