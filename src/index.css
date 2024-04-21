@@ -153,12 +153,6 @@
     transform: scaleY(-1);
   }
 
-  .card-wrapper {
-    border-radius: 16px;
-    transition: 500ms;
-    z-index: 1;
-  }
-
   .card,
   .card-secondary-row {
     display: grid;
@@ -173,11 +167,6 @@
 
   .card-secondary-row {
     padding: 1.5rem;
-  }
-
-  .card-wrapper:hover {
-    transform: rotate(3deg) scale(1.01);
-    transition: 500ms;
   }
 
   .card:hover,
@@ -197,11 +186,6 @@
     font-size: 1.5rem;
   }
 
-  .card-author {
-    align-self: center;
-    justify-self: flex-start;
-    font-size: .8rem;
-  }
 
   .about-card h3 {
     @apply text-2xl z-[1] font-medium;

@@ -1,10 +1,26 @@
 import { Link } from "react-router-dom";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
+import { Card } from "@/components/Card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 function Home() {
+  const [posts, setPosts] = useState([]);
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
-  });
+  }, []);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/posts/last/3`, { mode: 'cors' })
+      .then(response => {
+        if (response.ok)
+          return response.json()
+        else
+          throw new Error(`${response.status} ${response.statusText}`);
+      })
+      .then(response => { setPosts(response.posts) })
+      .catch(error => { console.log(error); });
+  }, []);
 
   return (
     <>
@@ -28,25 +44,20 @@ function Home() {
         <div className="card-container grid grid-rows-[1fr_auto] w-full min-h-[60dvh] self-center max-w-screen-xl gap-12 px-4">
           <div className="grid gap-6 grid-cols-1 grid-rows-3
             lg:grid-flow-col lg:grid-rows-5 lg:grid-cols-[3fr_2fr]">
-
-            <div className="card-wrapper lg:row-span-5 bg-primary/50">
-              <Link to="" className="card bg-primary text-primary-foreground" >
-                <div className="card-title">A really really big title, in fact more long than big, but this time double the size</div>
-                <div className="card-author">author</div>
-              </Link>
-            </div>
-            <div className="card-wrapper lg:row-span-2 bg-accent/50">
-              <Link to="" className="card lg:card-secondary-row bg-accent text-accent-foreground">
-                <div className="card-title">A really really big title, in fact more long than big, but this time double the size</div>
-                <div className="card-author">author</div>
-              </Link>
-            </div>
-            <div className="card-wrapper lg:row-span-3 bg-popover/50">
-              <Link to="" className="card lg:card-secondary-row bg-popover text-popover-foreground">
-                <div className="card-title">A mostly normal size title, nothing to add</div>
-                <div className="card-author">author</div>
-              </Link>
-            </div>
+            {
+              posts.length == 3 ? (
+                <>
+                  <Card className="bg-primary/70 text-primary-foreground" post={posts[0]} wrapperClass="lg:row-span-5" />
+                  <Card className="bg-accent/70 text-accent-foreground" post={posts[1]} wrapperClass="lg:row-span-2" cardClass="lg:card-secondary-row" />
+                  <Card className="bg-popover/70 text-popover-foreground" post={posts[2]} wrapperClass="lg:row-span-3" cardClass="lg:card-secondary-row" />
+                </>
+              ) : (
+                <>
+                  <Skeleton className="rounded-2xl bg-primary lg:row-span-5 hover:rotate-0" />
+                  <Skeleton className="rounded-2xl bg-accent lg:row-span-2 hover:rotate-0" />
+                  <Skeleton className="rounded-2xl bg-popover lg:row-span-3 hover:rotate-0" />
+                </>)
+            }
           </div>
 
           <Link to="/posts" className="justify-self-end">
@@ -64,9 +75,9 @@ function Home() {
           </Link>
 
         </div>
-      </section>
+      </section >
     </>
   )
 }
 
-export default Home;
+export default Home
