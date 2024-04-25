@@ -30,8 +30,7 @@ export function PostsList() {
   }, []);
 
   return (
-    <div id="posts-list" className="flex flex-col gap-16 max-w-[1400px] min-h-[calc(100vh-100px)] py-12 px-4 lg:px-12 bg-secondary text-secondary-foreground text-left lg:rounded lg:shadow-sm lg:mx-4">
-
+    <div id="posts-list" className="flex flex-col w-full gap-16 max-w-screen-xl min-h-[calc(100vh-100px)] py-12 px-4 lg:px-12 bg-secondary text-secondary-foreground text-left lg:rounded lg:shadow-sm lg:mx-4">
       <section id="posts-container" className="grid lg:grid-cols-3 auto-rows-fr gap-4">
         {posts.length ?
           posts.map((post) => {

@@ -7,7 +7,7 @@ function About() {
   });
 
   return (
-    <div id="about" className="flex flex-col gap-16 max-w-[1400px] py-12 px-12 bg-secondary text-secondary-foreground text-left
+    <div id="about" className="flex flex-col w-full gap-16 max-w-screen-xl py-12 px-12 bg-secondary text-secondary-foreground text-left
        lg:rounded lg:shadow-sm lg:mx-4">
       <h1 className="text-[2rem] font-medium">About the Odin Blog</h1>
       <section className="flex flex-col gap-4">
