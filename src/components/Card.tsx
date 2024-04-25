@@ -12,7 +12,7 @@ interface CardProps {
 function Card({ className, post, wrapperClass, cardClass }: CardProps) {
   return (
     <div key={post._id} className={`${className} rounded-2xl duration-500 z-[1] hover:rotate-3 hover:scale-[1.01] hover:duration-500 ${wrapperClass}`}>
-      <Link to={`posts/${post._id}`} className={`${className} card ${cardClass}`}>
+      <Link to={`/posts/${post._id}`} className={`${className} card ${cardClass}`}>
         <div className="card-title">{post.title}</div>
         <div className="flex h-5 items-center gap-2 text-sm">
           {post.author.firstname + ' ' + post.author.lastname}

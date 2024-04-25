@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 import App from './App.tsx'
 import Home from './routes/Home.tsx'
-import PostsList from './routes/PostsList.tsx'
-import Post from './routes/Post.tsx'
+import { PostsList, loader as PostsListLoader } from './routes/PostsList.tsx'
+import { PostPage, loader as PostLoader } from './routes/PostPage.tsx'
 import About from './routes/About.tsx'
 import './index.css'
 
@@ -22,11 +22,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/posts",
+        loader: PostsListLoader,
         element: <PostsList />
       },
       {
-        path: "/posts/:postid",
-        element: <Post />
+        path: "/posts/:_id",
+        loader: PostLoader,
+        element: <PostPage />
       },
       {
         path: "/about",
