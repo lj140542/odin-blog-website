@@ -12,3 +12,15 @@ export interface Post {
   content: string,
   published?: boolean,
 }
+
+export interface Comment {
+  _id: string,
+  author: string,
+  timestamp: Date,
+  content: string,
+}
+
+export interface PostWithComments {
+  post: Post,
+  comments: Comment[]
+}

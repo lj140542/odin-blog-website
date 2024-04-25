@@ -7,7 +7,7 @@ import {
 import App from './App.tsx'
 import Home from './routes/Home.tsx'
 import { PostsList, loader as PostsListLoader } from './routes/PostsList.tsx'
-import { PostPage, loader as PostLoader } from './routes/PostPage.tsx'
+import { PostPage, loader as PostLoader, action as PostAction } from './routes/PostPage.tsx'
 import About from './routes/About.tsx'
 import './index.css'
 
@@ -28,6 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/posts/:_id",
         loader: PostLoader,
+        action: PostAction,
         element: <PostPage />
       },
       {

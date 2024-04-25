@@ -21,7 +21,7 @@ export async function loader() {
 }
 
 export function PostsList() {
-  const Colors: string[] = ["primary", "accent", "popover"];
+  const colors: string[] = ["primary", "accent", "popover"];
   let randomColor: string = "primary";
   const posts = useLoaderData() as Post[];
 
@@ -34,7 +34,7 @@ export function PostsList() {
       <section id="posts-container" className="grid lg:grid-cols-3 auto-rows-fr gap-4">
         {posts.length ?
           posts.map((post) => {
-            randomColor = Colors[Math.floor(Math.random() * 3)]
+            randomColor = colors[Math.floor(Math.random() * 3)]
             return (
               <PostCard key={post._id} className={`bg-${randomColor}/70 text-${randomColor}-foreground`} post={post} />
             )
