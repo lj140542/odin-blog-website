@@ -9,7 +9,7 @@ interface CardProps {
   cardClass?: string,
 }
 
-function Card({ className, post, wrapperClass, cardClass }: CardProps) {
+function PostCard({ className, post, wrapperClass, cardClass }: CardProps) {
   return (
     <div key={post._id} className={`${className} rounded-2xl duration-500 z-[1] hover:rotate-3 hover:scale-[1.01] hover:duration-500 ${wrapperClass}`}>
       <Link to={`/posts/${post._id}`} className={`${className} card ${cardClass}`}>
@@ -24,4 +24,4 @@ function Card({ className, post, wrapperClass, cardClass }: CardProps) {
   )
 }
 
-export { Card };
+export { PostCard };

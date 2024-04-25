@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useLayoutEffect, useState } from "react";
-import { Card } from "@/components/Card";
+import { PostCard } from "@/components/PostCard";
 import { Skeleton } from "@/components/ui/skeleton";
 
 function Home() {
@@ -47,9 +47,9 @@ function Home() {
             {
               posts.length == 3 ? (
                 <>
-                  <Card className="bg-primary/70 text-primary-foreground" post={posts[0]} wrapperClass="lg:row-span-5" />
-                  <Card className="bg-accent/70 text-accent-foreground" post={posts[1]} wrapperClass="lg:row-span-2" cardClass="lg:card-secondary-row" />
-                  <Card className="bg-popover/70 text-popover-foreground" post={posts[2]} wrapperClass="lg:row-span-3" cardClass="lg:card-secondary-row" />
+                  <PostCard className="bg-primary/70 text-primary-foreground" post={posts[0]} wrapperClass="lg:row-span-5" />
+                  <PostCard className="bg-accent/70 text-accent-foreground" post={posts[1]} wrapperClass="lg:row-span-2" cardClass="lg:card-secondary-row" />
+                  <PostCard className="bg-popover/70 text-popover-foreground" post={posts[2]} wrapperClass="lg:row-span-3" cardClass="lg:card-secondary-row" />
                 </>
               ) : (
                 <>

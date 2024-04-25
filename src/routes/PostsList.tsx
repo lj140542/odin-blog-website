@@ -1,7 +1,7 @@
 import { useLayoutEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Post } from "@/types";
-import { Card } from "@/components/Card";
+import { PostCard } from "@/components/PostCard";
 
 export async function loader() {
   const data = fetch(`${import.meta.env.VITE_API_URL}/posts`, { mode: 'cors' })
@@ -37,7 +37,7 @@ export function PostsList() {
           posts.map((post) => {
             randomColor = Colors[Math.floor(Math.random() * 3)]
             return (
-              <Card key={post._id} className={`bg-${randomColor}/70 text-${randomColor}-foreground`} post={post} />
+              <PostCard key={post._id} className={`bg-${randomColor}/70 text-${randomColor}-foreground`} post={post} />
             )
           })
           : (
