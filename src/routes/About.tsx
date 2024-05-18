@@ -45,13 +45,13 @@ function About() {
       <section className="flex flex-col gap-4">
         <h2>Links</h2>
         <div className="grid grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-8 py-4 text-center">
-          <a href="https://github.com/lj140542" target="_blank" className="cursor-pointer">
+          <a href="https://www.theodinproject.com/" target="_blank" className="cursor-pointer">
             <AboutCard className="bg-primary text-primary-foreground" spanBg="bg-odinproject">
               <h3>The Odin Project</h3>
               <p>Click to visit the Odin Project website.</p>
             </AboutCard>
           </a>
-          <a href="https://www.theodinproject.com/" target="_blank" className="cursor-pointer">
+          <a href="https://github.com/lj140542" target="_blank" className="cursor-pointer">
             <AboutCard className="bg-accent text-accent-foreground" spanBg="bg-github">
               <h3>GitHub</h3>
               <p>Click to visit my Github page.</p>
