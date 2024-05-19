@@ -73,8 +73,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        "github": "url('github.png')",
-        "odinproject": "url('odinproject.png')",
+        "github": "url('../github.png')",
+        "odinproject": "url('../odinproject.png')",
       },
       backgroundSize: {
         "12": "3rem",
